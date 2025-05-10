@@ -1,0 +1,9 @@
+gemini-sdk          # or openai
+fastapi
+uvicorn[standard]
+langchain
+pdfplumber
+sentence-transformers
+faiss-cpu
+pydantic
+pytest

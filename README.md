@@ -55,7 +55,31 @@ A solution for calculating port tariffs in South African ports using a RAG (Retr
    COHERE_API_KEY=
    ```
 
-## Running the Application
+## Running the Application with Docker
+
+The easiest way to deploy the application is using Docker Compose:
+
+1. Make sure Docker and Docker Compose are installed on your system
+2. Set environment variables in your `.env` file. You can use `.env.examle` as a template.
+3. Build and start the containers:
+   ```bash
+   docker compose up -d --build
+   ```
+4. Access the application:
+   - Backend API: http://localhost:8000
+   - Streamlit UI: http://localhost:8501 - wait for the Backend to start before sending queries
+
+To stop the application:
+```bash
+docker compose down
+```
+
+For viewing logs:
+```bash
+docker compose logs -f
+```
+
+## Running the Application Manually
 
 ### Start the FastAPI Server
 
@@ -136,40 +160,6 @@ The application comes pre-filled with an example query for the SUDESTADA vessel 
 - Vehicle traffic services (VTS) dues: ZAR 33,315.75
 - Pilotage dues: ZAR 47,189.94
 - Running of vessel lines dues: ZAR 19,639.50
-
-## Deployment
-
-### Docker Compose Deployment
-
-The easiest way to deploy the application is using Docker Compose:
-
-1. Make sure Docker and Docker Compose are installed on your system
-2. Set environment variables in your `.env` file:
-   ```
-   GOOGLE_API_KEY=your_google_api_key_here
-   COHERE_API_KEY=your_cohere_api_key_here
-   ```
-3. Build and start the containers:
-   ```bash
-   docker compose up -d --build
-   ```
-4. Access the application:
-   - Backend API: http://localhost:8000
-   - Streamlit UI: http://localhost:8501
-
-To stop the application:
-```bash
-docker compose down
-```
-
-For viewing logs:
-```bash
-docker compose logs -f
-```
-
-### Manual Deployment
-
-If you prefer to run the services separately without Docker:
 
 ## License
 
